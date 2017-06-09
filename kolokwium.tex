@@ -1,0 +1,101 @@
+% Krzysztof Kosecki %
+\documentclass[a4paper,11pt]{article}
+\usepackage[a4paper,left=3cm,right=2.5cm,top=2cm,bottom=2cm]{geometry}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage[english]{babel}
+\usepackage{times}
+\usepackage{anysize}
+\usepackage{titlesec}
+\usepackage{fancyhdr}
+\usepackage{multirow}
+\usepackage{courier}
+\usepackage{color}
+\usepackage{listings}
+
+\newcommand\tab[1][0.4cm]{\hspace*{#1}}
+
+\setcounter{section}{35}
+\setcounter{footnote}{7}
+\setcounter{subsection}{1}
+\setcounter{table}{14}
+\setcounter{page}{151}
+
+\pagestyle{fancy}
+\fancyhf{}
+\lhead{\ref{r36} \tab LITERATURA}
+\renewcommand{\footrulewidth}{0.4pt}
+\rfoot{Strona \thepage}
+
+\begin{document}
+    \section{Tabela i literatura}
+    \label{r36}
+        \subsection{Instrukcja}
+        Należy napisać document klasy \textit{article}, w postaci takiej jak Pani/Pan trzyma w ręku.
+        Dopuszczalne są odstępstwaod tej postaci, tj. rozszerzenia oraz zawężeniado uproszczonej postaci (za dodatkowe "dodatnie" i "ujemne" punkty). Informacje o tych modyfikacjach znajdują się w przypisach\footnote{
+        Zalecane parametry dokumentu to \textit{a4paper,11pt}, marginesy: górny i dolny 2cm, lewy 3cm, a prawy 2,5cm.}.\\
+        \indent Ta strona zawiera rozdział (sekcję) (\ref{r36}), a w nim dwa podrozdziały (podsekcje)\footnote{
+        Najlepiej byłoby nadać numer rozdziału ustawiając odpowiedni licznik. W przypadku innych obiektów --- podobnie, ale należy traktować to jako kosmetykę. Ważniejsze jest, aby w odwołaniach do obiektów używać przypisanych im etykiet. 
+        } i spis literatury. \\
+		 \indent\color{red}Na początku pliku źródłowego, w komentarzu proszę wpisać swoje imię i nazwisko.
+		 Wersję źródłową (.tex i .bib) i wynikową (.pdf) proszę wysłać na adres \texttt{miller@agh.edu.pl}\color{black}\footnote{
+		 	Te dwa zdania należy napisać kolorem czerwonym.
+		 }.
+
+        \subsection{Zadania}
+        \begin{enumerate}
+            \item W tabeli (\ref{15}) przedstawiono klasyfikację stałych w języku C.
+
+	\begin{table}[h]
+		\centering
+		\caption{Stałe w języku C}
+		\label{15}
+		\begin{tabular}{llll|l|}
+			\cline{5-5}
+			& & & & Przykład \\ \hline
+			\multicolumn{4}{|l|}{Deklarowane stałe} & \ttfamily{const int size =128} \\ \hline
+			\multicolumn{4}{|l|}{Stałe preprocesora} & \ttfamily{\#define SIZE 256}   \\ \hline
+			\multicolumn{1}{|l|}{\multirow{7}{*}{Literały}} & 
+			\multicolumn{3}{l|}{łańcuch znakowy}
+			& \ttfamily{"koniec linii.\textbackslash{}n"} \\ \cline{2-5} 
+			\multicolumn{1}{|l|}{} & 
+			\multicolumn{2}{l|}{\multirow{2}{*}{znakowe}} & \textit{escape sequence} & \ttfamily{'\textbackslash{}n','\textbackslash{}xa4'} \\ \cline{4-5} 
+			\multicolumn{1}{|l|}{} & 
+			\multicolumn{2}{l|}{} & znak & \ttfamily{'A','!'}  \\ \cline{2-5} 
+			\multicolumn{1}{|l|}{}                          & \multicolumn{1}{l|}{\multirow{4}{*}{liczbowe}} & \multicolumn{1}{l|}{\multirow{3}{*}{całkowite}} & dziesiętne & \ttfamily{8743} \\ \cline{4-5} 
+			\multicolumn{1}{|l|}{}  &
+			\multicolumn{1}{l|}{}  & 
+			\multicolumn{1}{l|}{} & ósemkowe & \ttfamily{07464} \\ \cline{4-5} 
+			\multicolumn{1}{|l|}{} & 
+			\multicolumn{1}{l|}{} & 
+			\multicolumn{1}{l|}{}  & szestnastkowe & \ttfamily{0x5AFF} \\ \cline{3-5} 
+			\multicolumn{1}{|l|}{} & 
+			\multicolumn{1}{l|}{} & 
+			\multicolumn{2}{l|}{zmiennoprzecinkowe} & \ttfamily{140.58} \\ 
+			\hline
+		\end{tabular}
+	\end{table}
+
+            \item Należy\footnote{
+            Możliwe uproszczenie: znak diamentu w każdej pozycji można zastąpić standardowym znakiem dla "\textit{itemize}".
+            }:
+              \renewcommand{\labelitemi}{$\diamondsuit$}
+              \begin{itemize}
+              	\item znaleźć w sieci notki bibliograficzne dwóch pozycji\footnote{
+              	Z dokładnością do autorów i tytułu - pozostałe dane mogą wskazywać na inne wydanie.
+              	},
+              	\item utworzyć plik \ttfamily{.bib}
+              	\normalfont % nie wiem czemu tutaj to jest wymagane
+              	\item odwołać się do znalezinych pozycji cytując zdanie: \\
+              	\indent Dalsze informacje można znaleźć w literaturze \cite{bulirsch:02} lub \cite{Kernighan:1988:CPL:576122}.
+              \end{itemize}
+        \end{enumerate}
+        
+        \renewcommand\refname{Literatura}
+        \bibliographystyle{plain}
+        \bibliography{przypisy}
+
+      
+\end{document}
